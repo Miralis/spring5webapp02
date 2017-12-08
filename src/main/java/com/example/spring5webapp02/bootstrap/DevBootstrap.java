@@ -4,7 +4,7 @@ import com.example.spring5webapp02.model.Author;
 import com.example.spring5webapp02.model.Book;
 import com.example.spring5webapp02.model.Publisher;
 import com.example.spring5webapp02.repositories.AuthorRepository;
-import com.example.spring5webapp02.repositories.BookRespository;
+import com.example.spring5webapp02.repositories.BookRepository;
 import com.example.spring5webapp02.repositories.PublisherRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -14,12 +14,12 @@ import org.springframework.stereotype.Component;
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 
     private AuthorRepository authorRepository;
-    private BookRespository bookRespository;
+    private BookRepository bookRepository;
     private PublisherRepository publisherRepository;
 
-    public DevBootstrap(AuthorRepository authorRepository, BookRespository bookRespository, PublisherRepository publisherRepository) {
+    public DevBootstrap(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
-        this.bookRespository = bookRespository;
+        this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
     }
 
@@ -32,7 +32,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 
         authorRepository.save(eric);
         publisherRepository.save(harper);
-        bookRespository.save(ddd);
+        bookRepository.save(ddd);
 
         //Rod
         Author rod = new Author("Rod", "Johnson");
@@ -42,7 +42,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 
         authorRepository.save(rod);
         publisherRepository.save(worx);
-        bookRespository.save(noEJB);
+        bookRepository.save(noEJB);
     }
 
     @Override
