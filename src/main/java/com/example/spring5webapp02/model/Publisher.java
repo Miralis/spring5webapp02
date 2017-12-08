@@ -15,6 +15,13 @@ public class Publisher {
     private String name;
     private String address;
 
+    //Default constructor is needed, otherwise we get this error when running thymeleaf:
+    //No default constructor for entity: : com.example.spring5webapp02.model.Publisher;
+    // nested exception is org.hibernate.InstantiationException: No default constructor for
+    // entity: : com.example.spring5webapp02.model.Publisher
+    public Publisher() {
+    }
+
     public Publisher(String name, String address) {
         this.name = name;
         this.address = address;
