@@ -19,6 +19,7 @@ public class BookController {
         model.addAttribute("books", bookRepository.findAll());
 
         // Tells Spring mvc to associate this with a View called "books"
+        // if we put the books.html file in a folder we have to say "folder/books" and so on
         return "books";
     }
 }
